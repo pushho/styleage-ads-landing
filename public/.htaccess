@@ -1,0 +1,10 @@
+# The mailbox password lives in this file. Do not serve it.
+<Files "mail-config.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
