@@ -7,6 +7,9 @@ const concerns = [
   { value: "crown", label: "The crown" },
   { value: "density", label: "Overall density" },
   { value: "repair", label: "An earlier transplant" },
+  { value: "beard", label: "Beard or moustache" },
+  { value: "eyebrow", label: "Eyebrows" },
+  { value: "prp", label: "PRP support" },
   { value: "opinion", label: "I want an opinion first" },
 ];
 
@@ -221,7 +224,11 @@ export function ConsultForm({
             variant === "aside" || variant === "closing" ? "w-full" : ""
           }`}
         >
-          {sending ? "Sending…" : "Request a consult"}
+          {sending
+            ? "Sending…"
+            : variant === "aside"
+              ? "Book Hair Transplant Consultation"
+              : "Request an Appointment"}
         </button>
         {submitError ? (
           <p role="alert" className="mt-3 max-w-sm text-sm text-accent-dark">

@@ -11,6 +11,9 @@ const CONCERN_LABELS = [
     'crown' => 'The crown',
     'density' => 'Overall density',
     'repair' => 'An earlier transplant',
+    'beard' => 'Beard or moustache',
+    'eyebrow' => 'Eyebrows',
+    'prp' => 'PRP support',
     'opinion' => 'I want an opinion first',
 ];
 

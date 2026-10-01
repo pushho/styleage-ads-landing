@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hair transplant in Dubai | StyleAge Clinic",
+  title: "Hair Transplant Dubai | FUE & DHI Hair Transplant Clinic | StyleAge",
   description:
-    "FUE and DHI hair transplant consultations at StyleAge Clinic, Ibn Sina Building, Dubai Healthcare City. Suitability, method, fee, and the treating doctor are confirmed before a procedure is booked.",
+    "Hair transplant clinic in Dubai Healthcare City offering FUE, Sapphire FUE, DHI, and FUT hair restoration, plus beard and eyebrow transplant. Book a hair transplant consultation in Dubai; suitability, cost, and the treating doctor are confirmed before anything is booked.",
   icons: { icon: "/styleage-logo.png" },
 };
 

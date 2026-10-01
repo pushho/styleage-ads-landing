@@ -1,4 +1,5 @@
 import { ConsultForm } from "@/components/consult-form";
+import { Team } from "@/components/Team";
 import { CLINIC, CLINIC_LINKS } from "@/lib/clinic";
 
 const nav = [
@@ -17,8 +18,8 @@ const reasons = [
     icon: "surgeon",
   },
   {
-    title: "FUE and DHI",
-    body: "Both move your own follicular units. The method is chosen after the donor area is examined.",
+    title: "The method follows the exam",
+    body: "FUE, Sapphire FUE, DHI, and FUT all move your own follicles. Beard, eyebrow, and PRP are discussed only when they fit that plan.",
     icon: "technology",
   },
   {
@@ -28,7 +29,7 @@ const reasons = [
   },
   {
     title: "Fee before booking",
-    body: "The plan, the graft estimate, and the fee are explained at consultation. You can leave and decide later.",
+    body: "The plan, the graft estimate, and your hair transplant cost in Dubai are explained at consultation. You can leave and decide later.",
     icon: "discreet",
   },
 ] as const;
@@ -36,11 +37,11 @@ const reasons = [
 const steps = [
   {
     title: "Consultation",
-    body: "Hair-loss pattern, donor area, general health, and what you hope to change are assessed. Photographs are taken. A transplant is not assumed.",
+    body: "The scalp is examined, along with the type and pattern of hair loss and the donor area. Your medical history, general health, and what you hope to change are discussed. Photographs are taken. A transplant is not assumed.",
   },
   {
     title: "Planning",
-    body: "If surgery is suitable, the hairline and a graft estimate are discussed. The safe number depends on donor density, head size, skin, age, and whether a later session may be needed.",
+    body: "If a transplant is suitable, the hairline is planned and, where it applies, a graft estimate is discussed. The safe number depends on donor density, head size, skin, age, and whether a later session may be needed.",
   },
   {
     title: "Consent",
@@ -48,7 +49,7 @@ const steps = [
   },
   {
     title: "Procedure",
-    body: "Usually one day, under local anaesthetic. You stay awake. FUE or DHI is used as agreed for your donor area.",
+    body: "Usually one day, under local anaesthetic. You stay awake. The method agreed after the donor area is examined is the one used, including beard or eyebrow placement when that is the plan.",
   },
   {
     title: "Follow-up",
@@ -58,20 +59,82 @@ const steps = [
 
 const methods = [
   {
+    group: "Scalp",
     name: "FUE",
     full: "Follicular Unit Excision",
     summary: "Follicles taken one by one. No strip, so no single linear scar.",
     detail:
-      "Small, naturally occurring follicular units are excised with a micro-punch from the donor fringe above the ears and around the back of the head, then placed into the area of hair loss. This is often how a larger area is covered. Tiny dot marks can remain in the donor area. How visible they are depends on hair length, healing, and how many grafts are taken.",
+      "Small, naturally occurring follicular units are excised with a micro-punch from the donor fringe above the ears and around the back of the head, then placed into sites opened in the area of hair loss. This is often how a larger area is covered. Tiny dot marks can remain in the donor area. How visible they are depends on hair length, healing, and how many grafts are taken.",
     icon: "fue",
   },
   {
+    group: "Scalp",
+    name: "Sapphire FUE",
+    full: "Same harvest, different blade",
+    summary: "FUE extraction. Recipient sites opened with a sapphire blade.",
+    detail:
+      "The grafts are still taken one by one with a punch. The difference is the blade used to open the sites where they are placed: a sapphire blade makes a narrower cut than a typical steel blade. That is a tool choice, not a different operation. It does not guarantee density, faster healing, or a better result. Donor supply, design, and how the grafts are handled matter more than the blade.",
+    icon: "sapphire",
+  },
+  {
+    group: "Scalp",
     name: "DHI",
     full: "Direct Hair Implantation",
     summary: "The same FUE harvest, placed with an implanter.",
     detail:
-      "After the follicles are taken, each graft is placed with an implanter pen that sets angle, direction, and depth as it goes in. It is often used on the hairline, and where hair is added among hair that is still there. It uses the same donor hair as FUE. It does not create new follicles, and it is not offered as a higher-density guarantee. A session can take longer per graft.",
+      "After the follicles are taken, each graft is placed with an implanter pen that sets angle, direction, and depth as it goes in. It is often used on the hairline, and where hair is added among hair that is still there. It uses the same donor hair as FUE. It does not create new follicles, and it is not a higher-density guarantee. A session can take longer per graft.",
     icon: "dhi",
+  },
+  {
+    group: "Scalp",
+    name: "FUT",
+    full: "Follicular Unit Transplantation",
+    summary: "A strip of donor scalp, closed as one linear scar.",
+    detail:
+      "A long, thin piece of skin is removed from the back of the scalp. Follicular units are dissected from that strip under magnification, and the wound is closed. Dubai Health Authority describes that closure as leaving a single fine linear scar. The scar can show if the hair above it is worn very short. FUT is sometimes considered when many grafts are planned in one session, or when punching the donor skin one follicle at a time is a poor fit. It is not scarless, and it is not chosen because it produces a better hairline.",
+    icon: "fut",
+  },
+  {
+    group: "Face",
+    name: "Beard",
+    full: "Beard and moustache",
+    summary: "Scalp follicles placed to follow the direction of facial hair.",
+    detail:
+      "Follicles are usually taken from the scalp by FUE and placed into a beard, moustache, or a patch that is thin. Facial hair grows flatter against the skin than scalp hair, so the angle is planned on the face and agreed before anything is taken. Hair from the scalp keeps the growth of scalp hair, which means a transplanted beard usually needs regular trimming. How much can be covered depends on donor hair that can be spared from the scalp. A gap from scarring is assessed differently from a beard that was never dense.",
+    icon: "beard",
+  },
+  {
+    group: "Face",
+    name: "Eyebrow",
+    full: "Eyebrow restoration",
+    summary: "A small number of fine grafts, set along the brow.",
+    detail:
+      "Follicles are placed to rebuild a brow that is thin, patchy, or missing after over-plucking, scarring, or a cause that has settled. Direction and curve matter more than graft count, and the shape is drawn first. Hair taken from the scalp often keeps growing longer than a natural brow, so trimming is part of aftercare. A brow that is still actively falling out is not treated until the cause is understood. The donor supply for this is small.",
+    icon: "brow",
+  },
+  {
+    group: "Support",
+    name: "PRP",
+    full: "Platelet-rich plasma",
+    summary: "Your own plasma, sometimes used with a transplant. Not a transplant.",
+    detail:
+      "A sample of your blood is spun so the platelet-rich portion can be applied to the scalp. It is discussed as support around a transplant, or for early thinning, not as a replacement for a transplant. Studies of PRP for hair are mixed. It does not move follicles, it does not promise regrowth, and it is not a treatment for advanced pattern loss on its own. Whether it is suggested, and how many sessions, is decided after the scalp is examined.",
+    icon: "prp",
+  },
+] as const;
+
+const methodGroups = [
+  {
+    id: "Scalp",
+    note: "Four ways to move follicles on the scalp. The donor area decides which one is even possible.",
+  },
+  {
+    id: "Face",
+    note: "Beard and eyebrow work uses the same donor hair. The direction on the face is the part that has to be right.",
+  },
+  {
+    id: "Support",
+    note: "PRP does not replace a transplant. It is only discussed when the examination supports it.",
   },
 ] as const;
 
@@ -129,11 +192,19 @@ const people = [
   },
   {
     label: "Crown, or a widened part",
-    body: "Coverage through the top, including women with pattern hair loss and a usable donor area. Not every cause of women’s hair loss is treated with surgery.",
+    body: "Coverage through the top, including women with pattern hair loss and a usable donor area. Not every cause of women’s hair loss is treated with a transplant.",
   },
   {
     label: "An earlier transplant",
     body: "A review of grafts already placed. The first conversation is what can be changed, what cannot, and whether the donor area can still supply hair.",
+  },
+  {
+    label: "A beard or moustache",
+    body: "A patch, a thin beard, or a shape to rebuild with scalp follicles. The direction is drawn on the skin. Scalp hair placed in a beard usually needs trimming.",
+  },
+  {
+    label: "Eyebrows",
+    body: "A brow that is thin or missing, once the cause is clear. Few grafts are used, and the curve is drawn first. Scalp hair in a brow often grows longer than brow hair and is trimmed.",
   },
 ];
 
@@ -144,11 +215,11 @@ const limits = [
   },
   {
     title: "Pattern loss can continue",
-    body: "Hair around the transplant can keep thinning. Most people with pattern loss are advised to consider medical treatment as well as surgery. Surgery does not stop the underlying process.",
+    body: "Hair around the transplant can keep thinning. Most people with pattern loss are advised to consider medical treatment as well as a transplant. A transplant does not stop the underlying process.",
   },
   {
     title: "More than one session may be needed",
-    body: "If further work is likely, that is said before you consent, and the cost of surgery and follow-up is set out in writing. A single sitting does not restore a full head of hair in advanced loss.",
+    body: "If further work is likely, that is said before you consent, and the cost of the procedure and follow-up is set out in writing. A single sitting does not restore a full head of hair in advanced loss.",
   },
   {
     title: "Risks are part of consent",
@@ -158,38 +229,48 @@ const limits = [
 
 const questions = [
   {
-    q: "Will people be able to tell?",
-    a: "The hairline is drawn so single hairs sit at the edge and the direction follows how your hair grows. Whether anyone notices depends on that design, on healing, and on your hair. It cannot be promised that a transplant will be undetectable.",
+    q: "How much does a hair transplant cost in Dubai?",
+    a: `The fee depends on the area to be treated, the method (FUE, Sapphire FUE, DHI, or FUT), and how many grafts your donor area can safely supply. Because those are only known after an examination, ${CLINIC.name} does not quote a fixed price online. You receive the fee in writing at the consultation, including any follow-up, before anything is booked, and you can take it away and decide later. Be cautious of a fixed price given without an examination.`,
   },
   {
-    q: "Does the sitting hurt?",
-    a: "The local anaesthetic stings, then the scalp is numb for the procedure. You are awake. Afterwards, soreness is common and is managed with the aftercare you are given. The day is long. Absence of discomfort is not promised.",
+    q: "How many grafts might I need?",
+    a: "It depends on the size of the area, the hairline that is agreed, and how many follicles the donor area can spare without thinning it visibly. Ranges seen online, often around 1,500 to 4,000 grafts, describe other people’s cases. Your estimate is given after the donor area is examined. Some people need more than one session, and that is said before you consent.",
   },
   {
-    q: "How many grafts do I need?",
-    a: "The count is made after the donor area is examined and the design is agreed. A figure given before that is an estimate. Published ranges you may see elsewhere — often roughly 1,500 to 4,000 grafts — describe other people’s cases, not yours.",
+    q: "Am I suitable for a hair transplant?",
+    a: "You may be if the hair loss is patterned, the donor area at the back and sides can spare follicles, your general health allows the procedure, and your expectations are realistic. Women with pattern thinning are assessed too. A transplant is not planned when the donor area is poor, when loss is diffuse, or when a medical cause is still active. In your early twenties the pattern is often still changing, so medical treatment and waiting are usually discussed first.",
   },
   {
-    q: "What does it cost?",
-    a: "The fee follows the plan: the area to be treated and how many grafts the donor area can supply. You are given the figure at consultation, before a sitting is booked, including follow-up that applies. You can leave with it and decide later. This page does not publish a price, because a price before an examination would be a guess.",
+    q: "How long does the procedure take?",
+    a: "Most sessions take several hours, commonly around four to eight, depending on the number of grafts and the method. Larger plans are sometimes split over two days. It is done under local anaesthetic; you are awake, with breaks, and usually go home the same day. The procedure is carried out by a physician licensed to perform hair transplant, with licensed staff assisting.",
   },
   {
-    q: "Is the result permanent?",
-    a: "Follicles are taken from the donor fringe, which is more resistant to pattern loss than the top of the scalp. They are not guaranteed for life. Hair that was not transplanted can continue to thin, which is why medical treatment is often discussed alongside surgery.",
+    q: "What is the recovery period?",
+    a: "Redness, tenderness, and some forehead swelling are common in the first days. Small scabs usually clear within about 10 to 14 days. Between roughly two and eight weeks the transplanted hairs often shed; the follicles stay and grow new hair later. New growth tends to show around three to four months, and Dubai Health Authority guidance is that proper growth can be expected after about nine months. Recovery differs from person to person.",
   },
   {
-    q: "Is this only for men?",
-    a: "No. Women are assessed for a widening part, for temples, and for a hairline that has moved back, when the cause is suitable for surgery and the donor area can supply grafts. Diffuse hair loss that is not pattern loss is a reason not to operate.",
+    q: "When can I return to work?",
+    a: "Many people with desk jobs return within a few days to a week. Some wait until the scabs clear at around 10 to 14 days. Physical work, hard exercise, swimming, and steam rooms wait until the doctor clears you, often a few weeks. In Dubai, keep the grafts out of direct sun in the early weeks. Your written aftercare sets out what applies to you.",
   },
   {
-    q: "Who is not a candidate?",
-    a: "A transplant is not planned when the donor area is poor, when hair loss is diffuse and unpatterned, or when the cause is not androgenetic. Significant health problems, a tendency to keloid scars, and expectations that cannot be met in one or more sessions are reasons to pause or decline. Early loss in younger adults is approached carefully, because the pattern is still changing.",
+    q: "How is the donor area assessed?",
+    a: "The doctor examines the back and sides of the scalp, usually with magnification, to check how many follicles there are per area, the thickness of the hair, and whether the donor area itself is thinning. Scalp size, skin elasticity, any scarring from an earlier procedure, your age, and the chance of a future session are also considered. Together these set how many grafts can be taken safely and which method fits.",
   },
   {
-    q: "I am flying in. What should I plan?",
-    a: "The sitting is usually one day. Plan to stay the night and be seen the next morning. Do not book a flight for the evening of the procedure. Blood tests are part of the pre-operative assessment. Written aftercare covers the days after you return home, and a follow-up is arranged.",
+    q: "How do I book a consultation?",
+    a: `Fill in the form on this page, call ${CLINIC.phone}, or message us on WhatsApp. A coordinator will reply to arrange a time with the doctor at ${CLINIC.name} Clinic, Dubai Healthcare City, open ${CLINIC.hours.days}, ${CLINIC.hours.weekdays}. A daylight photo of the hairline and crown helps but is not required. There is no obligation to go ahead after the consultation.`,
   },
 ];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: questions.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const assurances = [
   "A reply from a coordinator at the clinic, not an automated message.",
@@ -239,7 +320,7 @@ export default function Home() {
               href="#consult"
               className="hidden bg-accent-dark px-4 py-2.5 text-sm text-white transition-opacity hover:opacity-90 md:inline-flex"
             >
-              Request a consult
+              {CTA.appointment}
             </a>
           </div>
         </div>
@@ -283,16 +364,17 @@ export default function Home() {
             <figcaption className="relative -mt-14 px-5 pb-2 sm:-mt-16 sm:px-8 lg:absolute lg:inset-y-0 lg:left-0 lg:mt-0 lg:flex lg:flex-col lg:justify-center lg:px-10 lg:pb-0 xl:px-14">
               <p className="inline-flex items-center gap-2 text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
                 <span aria-hidden="true" className="h-px w-6 bg-accent lg:hidden" />
-                Hair transplant in Dubai
+                Hair transplant clinic · Dubai Healthcare City
               </p>
               <h1 className="mt-3 max-w-[12ch] font-heading text-[clamp(2.25rem,9vw,2.75rem)] leading-[1.04] font-medium tracking-[-0.035em] lg:text-[clamp(2.2rem,3.6vw,3.6rem)]">
-                Agreed in the mirror, before a graft is taken.
+                Hair transplant in Dubai
               </h1>
               <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-muted sm:text-base">
-                A consultation comes first. The hairline is drawn on the scalp,
-                and you see it before a graft is taken. Whether surgery is
-                appropriate depends on your donor area, your health, and what
-                can realistically be covered.
+                FUE and DHI hair restoration at {CLINIC.name} Clinic, Dubai
+                Healthcare City. A consultation comes first. The hairline is
+                drawn on the scalp, and you see it before a graft is taken.
+                Whether a transplant is appropriate depends on your donor area, your
+                health, and what can realistically be covered.
               </p>
             </figcaption>
           </figure>
@@ -302,7 +384,7 @@ export default function Home() {
             className="mx-4 mt-8 mb-12 flex flex-col justify-center rounded-lg border border-border bg-white p-5 shadow-card sm:mx-8 sm:p-8 lg:m-0 lg:rounded-none lg:border-y-0 lg:border-r-0 lg:border-l lg:bg-surface lg:px-8 lg:py-6 lg:shadow-none xl:px-10"
           >
             <h2 className="font-heading text-[1.5rem] leading-none font-medium tracking-tight">
-              Request a consult
+              Book a hair transplant consultation in Dubai
             </h2>
             <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-muted">
               A coordinator replies on the number you leave. You decide about a
@@ -320,13 +402,15 @@ export default function Home() {
         >
           <div className="relative z-10 order-1 px-5 pt-16 sm:px-8 lg:order-none lg:flex lg:flex-col lg:justify-center lg:py-16 lg:pr-8 lg:pl-10 xl:pl-14">
             <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-              The procedure
+              Hair restoration in Dubai
             </p>
             <h2 className="mt-3 max-w-[22ch] font-heading text-[clamp(1.9rem,2.8vw,2.6rem)] leading-[1.12] font-medium tracking-tight">
               Your own follicles, moved from where they still grow.
             </h2>
             <p className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-muted sm:text-base">
-              A hair transplant is a surgical procedure. Follicular units are
+              A hair transplant is a surgical form of hair restoration,
+              performed at our hair transplant clinic in Dubai Healthcare City
+              by a licensed physician. Follicular units are
               taken from the donor fringe at the back and sides of the scalp
               and placed into areas of pattern hair loss. Dubai Health Authority
               describes it as a treatment option for male and female pattern
@@ -384,11 +468,10 @@ export default function Home() {
             />
           </figure>
         </section>
-
         <section id="process" className="border-t border-border">
           <div className="mx-auto w-full px-5 py-16 sm:px-8 md:py-20 lg:px-10">
             <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-              The process
+              Hair transplant consultation in Dubai
             </p>
             <div className="lg:flex lg:justify-between lg:gap-12">
               <h2 className="mt-3 font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
@@ -397,9 +480,9 @@ export default function Home() {
                 Nothing booked in a hurry.
               </h2>
               <p className="mt-4 max-w-xl 2xl:max-w-3xl leading-relaxed text-muted">
-                From the first visit to follow-up, the plan, the limits, and the
-                fee are explained before you decide. You can stop after the
-                consultation.
+                From the first hair transplant consultation to follow-up, the
+                plan, the limits, and the fee are explained before you decide.
+                You can stop after the consultation.
               </p>
             </div>
 
@@ -437,72 +520,89 @@ export default function Home() {
 
         <section
           id="methods"
-          className="scroll-mt-32 border-t border-border bg-white lg:grid lg:scroll-mt-24 lg:grid-cols-2"
+          className="scroll-mt-32 border-t border-border bg-white lg:scroll-mt-24"
         >
-          <figure className="relative aspect-4/3 overflow-hidden bg-accent-wash sm:aspect-video lg:aspect-auto lg:min-h-136">
-            <img
-              src="/images/methods-procedure.jpg"
-              alt="A gloved clinician placing a hair graft into the scalp with fine forceps"
-              className="absolute inset-0 h-full w-full object-cover object-[40%_center]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-white to-transparent lg:hidden"
-            />
-          </figure>
-          <div className="flex flex-col justify-center px-5 pt-4 pb-14 sm:px-8 md:py-20 lg:px-14 xl:px-20">
-            <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-              Our methods
-            </p>
-            <h2 className="mt-3 max-w-[18ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
-              Two ways to place the same donor hair.
-            </h2>
-            <p className="mt-4 max-w-md leading-relaxed text-muted">
-              FUE and DHI are offered at {CLINIC.name}. The difference is how
-              the grafts are placed, not a promise of density. Strip surgery
-              (FUT) is a recognised method in Dubai; it is not the method
-              described on this page.
-            </p>
-            <div className="mt-8 grid max-w-xl gap-3">
-              {methods.map((item) => (
-                <details
-                  key={item.name}
-                  className="group rounded-md border border-border bg-white shadow-soft transition-shadow open:shadow-card hover:shadow-card"
-                >
-                  <summary className="flex cursor-pointer items-center gap-3.5 px-4 py-4 sm:gap-4 sm:px-5">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-deep sm:size-11">
-                      <MethodIcon kind={item.icon} />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="flex flex-wrap items-baseline gap-x-2">
-                        <span className="font-heading text-[1.05rem] font-medium tracking-tight">
-                          {item.name}
-                        </span>
-                        <span className="text-[0.68rem] tracking-[0.14em] text-accent-dark uppercase">
-                          {item.full}
-                        </span>
-                      </span>
-                      <span className="mt-1 block text-sm leading-snug text-muted">
-                        {item.summary}
-                      </span>
-                    </span>
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-dark transition-colors group-open:bg-accent-dark group-open:text-white">
-                      <ArrowRight className="size-3.5 transition-transform group-open:rotate-90" />
-                    </span>
-                  </summary>
-                  <p className="border-t border-border px-4 py-4 text-sm leading-relaxed text-muted sm:px-5 sm:pl-20">
-                    {item.detail}
-                  </p>
-                </details>
-              ))}
+          <div className="lg:grid lg:grid-cols-2">
+            <figure className="relative aspect-4/3 overflow-hidden bg-accent-wash sm:aspect-video lg:aspect-auto lg:min-h-136">
+              <img
+                src="/images/methods-procedure.jpg"
+                alt="A gloved clinician placing a hair graft into the scalp with fine forceps"
+                className="absolute inset-0 h-full w-full object-cover object-[40%_center]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-white to-transparent lg:hidden"
+              />
+            </figure>
+            <div className="flex flex-col justify-center px-5 pt-4 pb-10 sm:px-8 md:py-20 lg:px-14 xl:px-20">
+              <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
+                Hair transplant methods
+              </p>
+              <h2 className="mt-3 max-w-[18ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
+                FUE, DHI, and FUT: same donor hair, moved differently.
+              </h2>
+              <p className="mt-4 max-w-md leading-relaxed text-muted">
+                FUE, Sapphire FUE, DHI, and FUT hair transplant in Dubai are
+                offered at {CLINIC.name},
+                along with beard and eyebrow placement and PRP support. None of
+                them creates new follicles. The examination decides which, if
+                any, is suitable.
+              </p>
             </div>
+          </div>
+          <div className="mx-auto w-full px-5 pb-16 sm:px-8 lg:px-10 lg:pt-10">
+            {methodGroups.map((group) => (
+              <div key={group.id} className="mt-10 first:mt-0">
+                <h3 className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
+                  {group.id}
+                </h3>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                  {group.note}
+                </p>
+                <div className="mt-4 grid items-start gap-3 lg:grid-cols-2">
+                  {methods
+                    .filter((item) => item.group === group.id)
+                    .map((item) => (
+                      <details
+                        key={item.name}
+                        className="group rounded-md border border-border bg-white shadow-soft transition-shadow open:shadow-card hover:shadow-card"
+                      >
+                        <summary className="flex cursor-pointer items-center gap-3.5 px-4 py-4 sm:gap-4 sm:px-5">
+                          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-deep sm:size-11">
+                            <MethodIcon kind={item.icon} />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="flex flex-wrap items-baseline gap-x-2">
+                              <span className="font-heading text-[1.05rem] font-medium tracking-tight">
+                                {item.name}
+                              </span>
+                              <span className="text-[0.68rem] tracking-[0.14em] text-accent-dark uppercase">
+                                {item.full}
+                              </span>
+                            </span>
+                            <span className="mt-1 block text-sm leading-snug text-muted">
+                              {item.summary}
+                            </span>
+                          </span>
+                          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-dark transition-colors group-open:bg-accent-dark group-open:text-white">
+                            <ArrowRight className="size-3.5 transition-transform group-open:rotate-90" />
+                          </span>
+                        </summary>
+                        <p className="border-t border-border px-4 py-4 text-sm leading-relaxed text-muted sm:px-5 sm:pl-20">
+                          {item.detail}
+                        </p>
+                      </details>
+                    ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="suitability" className="border-t border-border">
           <div className="mx-auto w-full px-5 py-16 sm:px-8 md:py-20 lg:px-10">
             <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-              Who is assessed
+              Who is suitable for a hair transplant
             </p>
             <div className="lg:flex lg:justify-between lg:gap-12">
               <h2 className="mt-3 max-w-[18ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
@@ -511,7 +611,11 @@ export default function Home() {
               <p className="mt-4 max-w-xl 2xl:max-w-3xl leading-relaxed text-muted">
                 Dubai Health Authority standards say a person in good general
                 health, with a good donor area and reasonable expectations, may
-                be considered for transplantation in pattern hair loss. The
+                be considered for transplantation in pattern hair loss.
+                Suitability depends on the donor area, the type and pattern of
+                hair loss, general health, and realistic expectations. Beard and
+                eyebrow requests are assessed the same way: donor supply, the
+                cause of the gap, and whether the aim can be met. The
                 examination decides. A photograph sent in advance can start the
                 conversation. It is not a diagnosis.
               </p>
@@ -573,10 +677,9 @@ export default function Home() {
         <section id="recovery" className="border-t border-border">
           <div className="mx-auto w-full px-5 py-16 sm:px-8 md:py-20 lg:px-10">
             <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-              Recovery
+              Hair transplant recovery
             </p>
             <div className="lg:flex lg:justify-between lg:gap-12">
-              
               <h2 className="mt-3 max-w-[16ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
                 What the year after usually involves.
               </h2>
@@ -613,13 +716,13 @@ export default function Home() {
             <div className="lg:flex lg:justify-between lg:gap-12">
               
             <h2 className="mt-3 max-w-[20ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
-              What surgery can and cannot do.
+              What a transplant can and cannot do.
             </h2>
             <p className="mt-4 max-w-xl 2xl:max-w-3xl leading-relaxed text-muted">
               A transplant redistributes hair you already have. Coverage depends
               on the donor supply. The consultation is also where a procedure
               is declined, if the donor area, the cause of hair loss, or the
-              aim make surgery a poor plan.
+              aim make a transplant a poor plan.
             </p>
             </div>
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -644,18 +747,24 @@ export default function Home() {
           id="questions"
           className="scroll-mt-32 border-t border-border lg:scroll-mt-24"
         >
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+            }}
+          />
           <div className="mx-auto grid w-full gap-10 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-x-16 lg:gap-y-8 lg:px-10">
             <div>
               <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
                 Questions
               </p>
               <h2 className="mt-3 max-w-[16ch] font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
-                Answers before you book.
+                Hair transplant in Dubai: common questions.
               </h2>
               <p className="mt-4 max-w-sm leading-relaxed text-muted">
-                What people ask before a first consultation. The answers describe
-                the procedure in general. Your own plan is confirmed only after
-                you are examined.
+                Cost, grafts, suitability, the procedure, and recovery. The
+                answers describe hair transplant in general. Your own plan is
+                confirmed only after you are examined.
               </p>
             </div>
 
@@ -690,163 +799,36 @@ export default function Home() {
                       </svg>
                     </span>
                   </summary>
-                  <p className="max-w-xl px-4 pb-5 pl-14 text-sm leading-relaxed text-muted sm:px-6 sm:pb-6 sm:pl-17">
+                  <p className="px-4 pb-5 pl-14 text-sm leading-relaxed text-muted sm:px-6 sm:pb-6 sm:pl-17">
                     {item.a}
                   </p>
                 </details>
               ))}
             </div>
 
-            <aside className="self-start rounded-md border border-border bg-white p-6 shadow-soft">
-              <span className="flex size-11 items-center justify-center rounded-full bg-accent-wash text-accent-deep">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="size-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z" />
-                  <path d="M8.5 9h7M8.5 12h4" />
-                </svg>
-              </span>
-              <p className="mt-4 font-heading text-lg font-medium tracking-tight">
+            <div className="rounded-md border border-border bg-accent-wash p-6 sm:p-8 lg:col-start-1 lg:row-start-2 lg:self-end">
+              <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
                 Still have a question?
               </p>
-              <p className="mt-1.5 max-w-xs text-sm leading-relaxed text-muted">
-                Leave your number and a coordinator will answer it on a call
-                or WhatsApp. No obligation to book.
+              <p className="mt-3 max-w-[22ch] font-heading text-[1.6rem] leading-[1.15] font-medium tracking-tight">
+                Ask it at a hair transplant consultation in Dubai.
               </p>
-              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-                <a
-                  href="#consult"
-                  className="inline-flex items-center gap-2 bg-accent-dark px-5 py-3 text-sm text-white transition-opacity hover:opacity-90"
-                >
-                  Ask a coordinator
-                  <ArrowRight className="size-3.5" />
-                </a>
-                <a
-                  href={CLINIC_LINKS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center gap-2 text-sm text-accent-dark hover:underline"
-                >
-                  <ContactIcon kind="whatsapp" className="size-4" />
-                  WhatsApp us
-                </a>
+              <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
+                Your cost, graft estimate, and suitability are answered after
+                the doctor examines your scalp. Call or WhatsApp us, or request
+                an appointment online.
+              </p>
+              <div className="mt-6">
+                <CtaButtons
+                  primary={{ label: CTA.book, href: "#appointment" }}
+                  stack
+                />
               </div>
-            </aside>
+            </div>
           </div>
         </section>
 
-        <section id="clinic" className="border-t border-border bg-white">
-          <div className="mx-auto grid w-full gap-12 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16 lg:px-10">
-            <div>
-              <p className="text-[0.68rem] tracking-[0.2em] text-accent-dark uppercase">
-                The clinic
-              </p>
-              <h2 className="mt-3 font-heading text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.1] font-medium tracking-tight">
-                {CLINIC.name} Clinic, Dubai Healthcare City.
-              </h2>
-              <p className="mt-4 max-w-md leading-relaxed text-muted">
-                This page is published by {CLINIC.legalName}. Consultations and
-                procedures take place at the address below. The same clinic
-                name, location, and contact details are the ones used for
-                enquiries.
-              </p>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-                The facility licence and each doctor’s professional licence are
-                displayed at the clinic. Before a procedure is booked you can
-                ask for the treating physician’s name and confirmation that
-                hair transplant is within that physician’s licensed scope.
-                Licence numbers are not printed here; they are available at the
-                premises and on request.
-              </p>
-            </div>
-            <dl className="grid content-start gap-6 text-sm sm:grid-cols-2">
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Legal name
-                </dt>
-                <dd className="mt-2 text-text">{CLINIC.legalName}</dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Service on this page
-                </dt>
-                <dd className="mt-2 leading-relaxed text-text">
-                  Hair transplant consultation, FUE, and DHI. Other care at the
-                  clinic is offered only where the facility licence and the
-                  treating doctor’s licence cover it.
-                </dd>
-              </div>
-              <div className="sm:col-span-2">
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Address
-                </dt>
-                <dd className="mt-2 leading-relaxed text-text">
-                  {CLINIC.addressLines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                  <a
-                    href={CLINIC_LINKS.map}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-1.5 text-accent-dark hover:underline"
-                  >
-                    Open in Maps
-                    <ArrowRight className="size-3.5" />
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Phone and WhatsApp
-                </dt>
-                <dd className="mt-2">
-                  <a href={CLINIC_LINKS.phone} className="text-text hover:text-accent-dark">
-                    {CLINIC.phone}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Email
-                </dt>
-                <dd className="mt-2 break-all">
-                  <a href={CLINIC_LINKS.email} className="text-text hover:text-accent-dark">
-                    {CLINIC.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Hours
-                </dt>
-                <dd className="mt-2 leading-relaxed text-text">
-                  {CLINIC.hours.days}
-                  <span className="block">{CLINIC.hours.weekdays}</span>
-                  <span className="mt-1 block text-muted">{CLINIC.hours.note}</span>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] text-accent-dark uppercase">
-                  Regulator
-                </dt>
-                <dd className="mt-2 leading-relaxed text-text">
-                  Dubai Healthcare City. The procedure is offered only where
-                  the facility licence and the treating doctor’s professional
-                  licence allow it.
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </section>
+        <Team />
 
         <section
           id="book"
@@ -877,14 +859,15 @@ export default function Home() {
           <div className="mx-auto grid w-full items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-20 lg:px-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,30rem)]">
             <div>
               <p className="text-[0.68rem] tracking-[0.2em] text-accent-soft uppercase">
-                Book your consultation
+                {CTA.book}
               </p>
               <h2 className="mt-3  font-heading text-[clamp(2.1rem,3.8vw,3.25rem)] leading-[1.08] font-medium tracking-tight">
                 Start with a consultation, not a graft count.
               </h2>
               <p className="mt-5 leading-relaxed text-white/75">
                 Leave your details and a coordinator will call or WhatsApp you
-                to arrange a visit. A daylight photo of the hairline and the
+                to arrange a visit to our hair transplant clinic in Dubai
+                Healthcare City. A daylight photo of the hairline and the
                 top of the head helps. It is not required, and it is not a
                 quotation.
               </p>
@@ -911,37 +894,11 @@ export default function Home() {
                 ))}
               </ul>
 
+              <div className="mt-8">
+                <CtaButtons tone="dark" />
+              </div>
+
               <div className="mt-10 grid max-w-xl gap-x-8 gap-y-5 border-t border-white/15 pt-8 text-sm sm:grid-cols-2">
-                <a
-                  href={CLINIC_LINKS.phone}
-                  className="group flex items-start gap-3"
-                >
-                  <ContactIcon kind="phone" className="mt-0.5 size-4.5 shrink-0 text-accent-soft" />
-                  <span>
-                    <span className="block text-[0.68rem] tracking-[0.16em] text-white/60 uppercase">
-                      Call
-                    </span>
-                    <span className="mt-1 block text-white group-hover:underline">
-                      {CLINIC.phone}
-                    </span>
-                  </span>
-                </a>
-                <a
-                  href={CLINIC_LINKS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start gap-3"
-                >
-                  <ContactIcon kind="whatsapp" className="mt-0.5 size-4.5 shrink-0 text-accent-soft" />
-                  <span>
-                    <span className="block text-[0.68rem] tracking-[0.16em] text-white/60 uppercase">
-                      WhatsApp
-                    </span>
-                    <span className="mt-1 block text-white group-hover:underline">
-                      Message us directly
-                    </span>
-                  </span>
-                </a>
                 <a
                   href={CLINIC_LINKS.map}
                   target="_blank"
@@ -975,9 +932,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="min-w-0 rounded-md bg-white p-6 text-text shadow-elevated sm:p-8">
+            <div
+              id="appointment"
+              className="min-w-0 scroll-mt-28 rounded-md bg-white p-6 text-text shadow-elevated sm:p-8"
+            >
               <p className="font-heading text-[1.4rem] leading-none font-medium tracking-tight">
-                Request a consult
+                {CTA.appointment}
               </p>
               <p className="mt-2.5 mb-6 text-sm leading-relaxed text-muted">
                 Takes under a minute. We reply on the number you leave.
@@ -1003,16 +963,17 @@ export default function Home() {
               </span>
             </a>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
-              FUE and DHI hair transplant consultations at {CLINIC.legalName},
-              Dubai Healthcare City. This page describes hair transplant only.
+              Hair transplant clinic in Dubai Healthcare City, operated by{" "}
+              {CLINIC.legalName}. FUE, Sapphire FUE, DHI, and FUT hair
+              restoration, including beard and eyebrow placement and PRP
+              support.
             </p>
-            <a
-              href="#consult"
-              className="mt-6 inline-flex items-center gap-2 bg-accent-dark px-5 py-3 text-sm text-white transition-opacity hover:opacity-90"
-            >
-              Request a consult
-              <ArrowRight className="size-3.5" />
-            </a>
+            <div className="mt-6 max-w-xs">
+              <CtaButtons
+                primary={{ label: CTA.book, href: "#appointment" }}
+                stack
+              />
+            </div>
           </div>
 
           <nav aria-label="Footer">
@@ -1108,7 +1069,7 @@ export default function Home() {
               rights reserved.
             </p>
             <p className="max-w-xl md:text-right">
-              Hair transplantation is surgery. Suitability, graft numbers,
+              Hair transplantation is a medical procedure. Suitability, graft numbers,
               recovery, and growth differ from person to person. This page is
               general information, not a diagnosis, a quotation, or a promise
               of outcome.
@@ -1126,16 +1087,73 @@ export default function Home() {
             className="flex h-12 items-center justify-center gap-2 border border-accent-dark px-4 text-sm text-accent-dark"
           >
             <ContactIcon kind="whatsapp" className="size-4.5" />
-            WhatsApp
+            {CTA.whatsapp}
           </a>
           <a
-            href="#consult"
+            href="#appointment"
             className="flex h-12 items-center justify-center bg-accent-dark text-sm text-white"
           >
-            Request a consult
+            {CTA.appointment}
           </a>
         </div>
       </div>
+    </div>
+  );
+}
+
+const CTA = {
+  book: "Book Hair Transplant Consultation",
+  call: `Call ${CLINIC.name} Clinic`,
+  whatsapp: "WhatsApp Us",
+  appointment: "Request an Appointment",
+};
+
+function CtaButtons({
+  primary,
+  tone = "light",
+  stack = false,
+}: {
+  primary?: { label: string; href: string };
+  tone?: "light" | "dark";
+  stack?: boolean;
+}) {
+  const base =
+    "inline-flex min-h-12 items-center justify-center gap-2 px-5 text-sm transition-colors";
+  const secondary =
+    tone === "dark"
+      ? "border border-white/35 text-white hover:bg-white/10"
+      : "border border-accent-dark/35 bg-white text-accent-dark hover:border-accent-dark hover:bg-accent-wash";
+
+  return (
+    <div
+      className={
+        stack
+          ? "grid gap-2.5"
+          : "flex flex-col gap-2.5 sm:flex-row sm:flex-wrap"
+      }
+    >
+      {primary && (
+        <a
+          href={primary.href}
+          className={`${base} bg-accent-dark text-white hover:bg-accent`}
+        >
+          {primary.label}
+          <ArrowRight className="size-3.5" />
+        </a>
+      )}
+      <a href={CLINIC_LINKS.phone} className={`${base} ${secondary}`}>
+        <ContactIcon kind="phone" className="size-4" />
+        {CTA.call}
+      </a>
+      <a
+        href={CLINIC_LINKS.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} ${secondary}`}
+      >
+        <ContactIcon kind="whatsapp" className="size-4" />
+        {CTA.whatsapp}
+      </a>
     </div>
   );
 }
@@ -1281,7 +1299,11 @@ function ReasonIcon({
   );
 }
 
-function MethodIcon({ kind }: { kind: "fue" | "dhi" }) {
+function MethodIcon({
+  kind,
+}: {
+  kind: "fue" | "sapphire" | "dhi" | "fut" | "beard" | "brow" | "prp";
+}) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -1293,18 +1315,36 @@ function MethodIcon({ kind }: { kind: "fue" | "dhi" }) {
       className="size-6"
       aria-hidden="true"
     >
-      <path d="M7 20v-2.5a6.5 6.5 0 1 1 9.6-5.7l1.4 2.7h-1.5V17a2 2 0 0 1-2 2H13v1" />
-      {kind === "fue" ? (
+      {kind === "prp" ? (
         <>
-          <circle cx="9" cy="9" r="0.6" fill="currentColor" />
-          <circle cx="11.5" cy="7.6" r="0.6" fill="currentColor" />
-          <circle cx="9.6" cy="12" r="0.6" fill="currentColor" />
-          <circle cx="12.4" cy="10.6" r="0.6" fill="currentColor" />
+          <path d="M12 3.5c2.2 3 5 5.6 5 9a5 5 0 0 1-10 0c0-3.4 2.8-6 5-9z" />
+          <path d="M12 11.5v3.5" />
         </>
       ) : (
         <>
-          <path d="M9 7.5l1.2 2M11.6 6.8l.6 2.2M8.6 10.8l1.4 1.6" />
-          <path d="M13.4 9.6l1.8-1.8" />
+          <path d="M7 20v-2.5a6.5 6.5 0 1 1 9.6-5.7l1.4 2.7h-1.5V17a2 2 0 0 1-2 2H13v1" />
+          {kind === "fue" && (
+            <>
+              <circle cx="9" cy="9" r="0.6" fill="currentColor" />
+              <circle cx="11.5" cy="7.6" r="0.6" fill="currentColor" />
+              <circle cx="9.6" cy="12" r="0.6" fill="currentColor" />
+              <circle cx="12.4" cy="10.6" r="0.6" fill="currentColor" />
+            </>
+          )}
+          {kind === "sapphire" && (
+            <path d="M12 6.2l2.2 3.6h-4.4z" />
+          )}
+          {kind === "dhi" && (
+            <>
+              <path d="M9 7.5l1.2 2M11.6 6.8l.6 2.2M8.6 10.8l1.4 1.6" />
+              <path d="M13.4 9.6l1.8-1.8" />
+            </>
+          )}
+          {kind === "fut" && <path d="M8.2 11.2h5.2" />}
+          {kind === "beard" && (
+            <path d="M8.4 12.2c.8 1.6 2 2.4 3.4 2.4s2.6-.8 3.4-2.4" />
+          )}
+          {kind === "brow" && <path d="M8.2 8.4c1.2-.8 2.4-.6 3.4.2" />}
         </>
       )}
     </svg>
