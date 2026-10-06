@@ -15,6 +15,18 @@ const CONCERN_LABELS = [
     'eyebrow' => 'Eyebrows',
     'prp' => 'PRP support',
     'opinion' => 'I want an opinion first',
+    'underarms' => 'Underarms',
+    'arms-legs' => 'Arms or legs',
+    'bikini' => 'Bikini area',
+    'face' => 'Face (lip, chin, or jaw)',
+    'body' => 'Back, chest, or another area',
+    'several' => 'More than one area',
+    'dull' => 'Dull or tired skin',
+    'congestion' => 'Congestion or breakouts',
+    'dryness' => 'Dryness or sensitivity',
+    'tone' => 'Uneven tone',
+    'event' => 'A facial before an event',
+    'plan' => 'Where a facial fits in my skin plan',
 ];
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -42,6 +54,8 @@ $name = clean_line((string) ($data['name'] ?? ''), 80);
 $phone = clean_line((string) ($data['phone'] ?? ''), 40);
 $concern = (string) ($data['concern'] ?? '');
 $note = clean_text((string) ($data['note'] ?? ''), 2000);
+$source = clean_line((string) ($data['source'] ?? ''), 160);
+$concernLabel = CONCERN_LABELS[$concern] ?? clean_line((string) ($data['concernLabel'] ?? ''), 120);
 
 $fields = [];
 if (text_length($name) < 2) {
@@ -50,7 +64,7 @@ if (text_length($name) < 2) {
 if (strlen(preg_replace('/\D/', '', $phone) ?? '') < 8) {
     $fields['phone'] = 'A full phone number, please.';
 }
-if (!isset(CONCERN_LABELS[$concern])) {
+if ($concernLabel === '') {
     $fields['concern'] = 'Choose what you want to talk about.';
 }
 
@@ -65,11 +79,11 @@ try {
         '',
         'Name: ' . $name,
         'Phone: ' . $phone,
-        'Concern: ' . CONCERN_LABELS[$concern],
+        'Concern: ' . $concernLabel,
         'Note: ' . ($note !== '' ? $note : '—'),
         '',
         'Sent: ' . gmdate('Y-m-d H:i:s') . ' UTC',
-        'Page: StyleAge ads page',
+        'Page: ' . ($source !== '' ? $source : 'StyleAge ads page'),
     ]);
 
     $client = new SmtpClient(

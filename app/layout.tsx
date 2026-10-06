@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_JP, Inter } from "next/font/google";
+import { CLINIC } from "@/lib/clinic";
 import "./globals.css";
 
 const plex = IBM_Plex_Sans_JP({
@@ -16,9 +17,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hair Transplant Dubai | FUE & DHI Hair Transplant Clinic | StyleAge",
-  description:
-    "Hair transplant clinic in Dubai Healthcare City offering FUE, Sapphire FUE, DHI, and FUT hair restoration, plus beard and eyebrow transplant. Book a hair transplant consultation in Dubai; suitability, cost, and the treating doctor are confirmed before anything is booked.",
+  title: {
+    default: `${CLINIC.name} | ${CLINIC.tagline}`,
+    template: `%s | ${CLINIC.name}`,
+  },
+  description: `${CLINIC.name} ${CLINIC.tagline} clinic in Dubai Healthcare City.`,
   icons: { icon: "/styleage-logo.png" },
 };
 

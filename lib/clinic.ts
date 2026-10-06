@@ -20,11 +20,15 @@ export const CLINIC = {
 
 const digits = (value: string) => value.replace(/\D/g, "");
 
+export function whatsappLink(message: string) {
+  return `https://wa.me/${digits(CLINIC.whatsapp)}?text=${encodeURIComponent(message)}`;
+}
+
 export const CLINIC_LINKS = {
   phone: `tel:+${digits(CLINIC.phone)}`,
-  whatsapp: `https://wa.me/${digits(CLINIC.whatsapp)}?text=${encodeURIComponent(
+  whatsapp: whatsappLink(
     `Hi ${CLINIC.name}, I'd like to ask about a hair transplant consultation.`,
-  )}`,
+  ),
   email: `mailto:${CLINIC.email}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     CLINIC.address,

@@ -2,7 +2,7 @@
 
 import { FormEvent, useId, useRef, useState, type ReactNode } from "react";
 
-const concerns = [
+const defaultConcerns = [
   { value: "hairline", label: "The hairline" },
   { value: "crown", label: "The crown" },
   { value: "density", label: "Overall density" },
@@ -12,6 +12,12 @@ const concerns = [
   { value: "prp", label: "PRP support" },
   { value: "opinion", label: "I want an opinion first" },
 ];
+
+const defaultSuccessNote =
+  "Keep {phone} nearby. A clear photograph of the hairline, and one of the top of the head in daylight, will give the conversation a head start.";
+
+const defaultFootnote =
+  "Used only to reply. A sitting is never booked from a photograph alone.";
 
 type Errors = {
   name?: string;
@@ -24,8 +30,18 @@ const sendError =
 
 export function ConsultForm({
   variant,
+  concerns = defaultConcerns,
+  submitLabel,
+  successNote = defaultSuccessNote,
+  footnote = defaultFootnote,
+  source,
 }: {
   variant: "desk" | "closing" | "aside";
+  concerns?: readonly { value: string; label: string }[];
+  submitLabel?: string;
+  successNote?: string;
+  footnote?: string;
+  source?: string;
 }) {
   const baseId = useId();
   const [name, setName] = useState("");
@@ -68,8 +84,11 @@ export function ConsultForm({
           name,
           phone,
           concern,
+          concernLabel:
+            concerns.find((item) => item.value === concern)?.label ?? concern,
           note,
           sa_hp: honeypot,
+          ...(source ? { source } : {}),
         }),
       });
       const contentType = response.headers.get("content-type") ?? "";
@@ -102,9 +121,7 @@ export function ConsultForm({
           Request received, {name.trim().split(" ")[0]}.
         </p>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-          Keep {phone.trim()} nearby. A clear photograph of the hairline, and
-          one of the top of the head in daylight, will give the conversation a
-          head start.
+          {successNote.replaceAll("{phone}", phone.trim())}
         </p>
       </div>
     );
@@ -226,18 +243,17 @@ export function ConsultForm({
         >
           {sending
             ? "Sending…"
-            : variant === "aside"
-              ? "Book Hair Transplant Consultation"
-              : "Request an Appointment"}
+            : (submitLabel ??
+              (variant === "aside"
+                ? "Book Hair Transplant Consultation"
+                : "Request an Appointment"))}
         </button>
         {submitError ? (
           <p role="alert" className="mt-3 max-w-sm text-sm text-accent-dark">
             {submitError}
           </p>
         ) : null}
-        <p className="mt-3 max-w-sm text-xs leading-relaxed text-muted">
-          Used only to reply. A sitting is never booked from a photograph alone.
-        </p>
+        <p className="mt-3 max-w-sm text-xs leading-relaxed text-muted">{footnote}</p>
       </div>
     </form>
   );
