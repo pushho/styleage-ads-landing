@@ -6,10 +6,10 @@ export const CLINIC = {
   whatsapp: "+971 56 733 1693",
   email: "styleagewhatsapp@gmail.com",
   address:
-    "Ibn Sina Bldg, 27 - Unit 303, 3rd Floor, Block, B - Umm Hurair Second - Dubai Healthcare City - Dubai - United Arab Emirates",
+    "Ibn Sina Bldg, 27 - Unit 303, 3rd Floor, Block B - Umm Hurair Second - Dubai Healthcare City - Dubai - United Arab Emirates",
   addressLines: [
-    "Ibn Sina Building 27, Block B, Unit 303, 3rd Floor",
-    "Umm Hurair Second, Dubai Healthcare City, Dubai, UAE",
+    "Ibn Sina Bldg 27 - Unit 303, 3rd Floor, Block B - ",
+    "Umm Hurair Second - Dubai Healthcare City - Dubai - United Arab Emirates",
   ],
   hours: {
     weekdays: "9:00 AM – 9:00 PM",
