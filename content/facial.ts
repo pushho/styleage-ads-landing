@@ -26,7 +26,7 @@ export const facial: TreatmentPageContent = {
   whatsappMessage: `Hi ${CLINIC.name}, I'd like to ask about a facial.`,
   hero: {
     image: {
-      src: "/images/facial-hero.png",
+      src: "/images/facial-hero.jpg",
       alt: "A clinician in a white coat examining a woman's cheek before a facial",
       className: "object-[85%_35%] sm:object-[80%_35%] lg:object-[100%_35%]",
     },
