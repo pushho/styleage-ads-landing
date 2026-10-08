@@ -13,9 +13,6 @@ const defaultConcerns = [
   { value: "opinion", label: "I want an opinion first" },
 ];
 
-const defaultSuccessNote =
-  "Keep {phone} nearby. A clear photograph of the hairline, and one of the top of the head in daylight, will give the conversation a head start.";
-
 const defaultFootnote =
   "Used only to reply. A sitting is never booked from a photograph alone.";
 
@@ -32,14 +29,12 @@ export function ConsultForm({
   variant,
   concerns = defaultConcerns,
   submitLabel,
-  successNote = defaultSuccessNote,
   footnote = defaultFootnote,
   source,
 }: {
   variant: "desk" | "closing" | "aside";
   concerns?: readonly { value: string; label: string }[];
   submitLabel?: string;
-  successNote?: string;
   footnote?: string;
   source?: string;
 }) {
@@ -52,7 +47,6 @@ export function ConsultForm({
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState("");
   const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
   const sendingRef = useRef(false);
 
   function fieldId(name: string) {
@@ -101,30 +95,20 @@ export function ConsultForm({
         : null;
 
       if (payload?.fields) setErrors(payload.fields);
-      if (!response.ok || !payload?.ok) {
-        setSubmitError(payload?.error || sendError);
+      if (response.ok && payload?.ok) {
+        // A full page load, so GTM page-view triggers fire on the thank-you page.
+        // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+        window.location.assign(
+          `/thank-you/?from=${encodeURIComponent(window.location.pathname)}`,
+        );
         return;
       }
-      setSent(true);
+      setSubmitError(payload?.error || sendError);
     } catch {
       setSubmitError(sendError);
-    } finally {
-      sendingRef.current = false;
-      setSending(false);
     }
-  }
-
-  if (sent) {
-    return (
-      <div role="status" className={variant === "closing" ? "py-6" : "py-2"}>
-        <p className="font-heading text-2xl tracking-tight text-text">
-          Request received, {name.trim().split(" ")[0]}.
-        </p>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-          {successNote.replaceAll("{phone}", phone.trim())}
-        </p>
-      </div>
-    );
+    sendingRef.current = false;
+    setSending(false);
   }
 
   const fieldClass =

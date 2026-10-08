@@ -382,8 +382,6 @@ export const hairTransplant: TreatmentPageContent = {
       { value: "prp", label: "PRP support" },
       { value: "opinion", label: "I want an opinion first" },
     ],
-    successNote:
-      "Keep {phone} nearby. A clear photograph of the hairline, and one of the top of the head in daylight, will give the conversation a head start.",
     footnote: "Used only to reply. A sitting is never booked from a photograph alone.",
   },
 };

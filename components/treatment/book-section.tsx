@@ -123,7 +123,6 @@ export function BookSection({
             variant="closing"
             concerns={form.concerns}
             submitLabel={submitLabel}
-            successNote={form.successNote}
             footnote={form.footnote}
             source={form.source}
           />

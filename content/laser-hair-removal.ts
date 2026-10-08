@@ -304,8 +304,6 @@ export const laserHairRemoval: TreatmentPageContent = {
       { value: "several", label: "More than one area" },
       { value: "opinion", label: "I want an opinion first" },
     ],
-    successNote:
-      "Keep {phone} nearby. A clear photograph of the area you want treated, taken in daylight, will give the conversation a head start.",
     footnote: "Used only to reply. A course is never booked from a photograph alone.",
     source: "Laser hair removal",
   },

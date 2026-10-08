@@ -43,7 +43,7 @@ export function SiteHeader({
           <a
             href={CLINIC_LINKS.phone}
             aria-label={`Call ${CLINIC.name}`}
-            className="flex size-10 items-center justify-center rounded-full bg-accent-wash text-accent-dark md:hidden"
+            className="flex size-10 items-center justify-center rounded-full text-accent-wash bg-accent-dark md:hidden"
           >
             <ContactIcon kind="phone" className="size-4.5" />
           </a>

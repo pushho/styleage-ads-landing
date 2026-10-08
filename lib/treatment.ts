@@ -120,7 +120,6 @@ export type TreatmentPageContent = {
   };
   form: {
     concerns: FormConcern[];
-    successNote: string;
     footnote: string;
     source?: string;
   };

@@ -297,8 +297,6 @@ export const facial: TreatmentPageContent = {
       { value: "plan", label: "Where a facial fits in my skin plan" },
       { value: "opinion", label: "I want an opinion first" },
     ],
-    successNote:
-      "Keep {phone} nearby. A clear photograph of your face in daylight, without makeup, will give the conversation a head start.",
     footnote: "Used only to reply. A facial is never booked from a photograph alone.",
     source: "Facial",
   },

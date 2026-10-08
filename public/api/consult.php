@@ -328,11 +328,15 @@ function respond(bool $ok, string $error, int $status, array $fields = []): void
         exit;
     }
 
+    if ($ok) {
+        http_response_code(303);
+        header('Location: /thank-you/?from=' . rawurlencode(referer_path()));
+        exit;
+    }
+
     header('Content-Type: text/html; charset=UTF-8');
-    $title = $ok ? 'Request received' : 'Request not sent';
-    $message = $ok
-        ? 'Thank you. The clinic will reply on the phone number you gave.'
-        : $error;
+    $title = 'Request not sent';
+    $message = $error;
     echo '<!DOCTYPE html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'
         . e($title)
         . '</title><body style="margin:0;background:#f6f3ee;color:#241c16;font:18px/1.5 Georgia,serif"><main style="max-width:36rem;margin:4rem auto;padding:0 1.5rem"><h1 style="font-weight:500">'
@@ -341,6 +345,16 @@ function respond(bool $ok, string $error, int $status, array $fields = []): void
         . e($message)
         . '</p><p><a href="/">Back to StyleAge</a></p></main></body></html>';
     exit;
+}
+
+function referer_path(): string
+{
+    $path = parse_url((string) ($_SERVER['HTTP_REFERER'] ?? ''), PHP_URL_PATH);
+    if (!is_string($path) || !str_starts_with($path, '/') || str_starts_with($path, '//')) {
+        return '/';
+    }
+
+    return $path;
 }
 
 function e(string $value): string
