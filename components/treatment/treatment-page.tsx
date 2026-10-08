@@ -4,6 +4,7 @@ import type { TreatmentPageContent } from "@/lib/treatment";
 import { BookSection } from "./book-section";
 import { DaySection } from "./day-section";
 import { FaqSection } from "./faq-section";
+import { FloatingContact } from "./floating-contact";
 import { HeroSection } from "./hero-section";
 import { LimitsSection } from "./limits-section";
 import { MethodsSection } from "./methods-section";
@@ -57,6 +58,7 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
       </main>
       <SiteFooter nav={content.nav} footer={content.footer} actions={actions} />
       <MobileBar actions={actions} appointmentLabel={content.cta.appointment} />
+      <FloatingContact actions={actions} />
     </div>
   );
 }
