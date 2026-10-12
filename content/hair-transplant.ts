@@ -12,8 +12,11 @@ export const hairTransplant: TreatmentPageContent = {
     { href: "#why", label: "The procedure" },
     { href: "#process", label: "Process" },
     { href: "#methods", label: "Methods" },
+    { href: "#videos", label: "Videos" },
+    { href: "#results", label: "Results" },
     { href: "#recovery", label: "Recovery" },
     { href: "#questions", label: "Questions" },
+    { href: "#reviews", label: "Reviews" },
     { href: "#clinic", label: "Clinic" },
   ],
   cta: {
@@ -246,6 +249,77 @@ export const hairTransplant: TreatmentPageContent = {
       },
     ],
   },
+  videos: {
+    id: "videos",
+    eyebrow: "On video",
+    title: "A short look at the procedure.",
+    intro:
+      "Three clips filmed at the clinic. One is a patient speaking after his visit. The others show a hairline being marked, grafts being placed, and the scalp on the day. They are examples from those visits, not a result you can expect.",
+    items: [
+      {
+        title: "Nour on his consultation",
+        detail: "0:26",
+        caption:
+          "Nour describes coming in for a consultation, thanks Dr. Shahd, and shows his hairline.",
+        src: "/hair-transplant/videos/nour.mp4",
+        poster: "/hair-transplant/videos/posters/nour.jpg",
+      },
+      {
+        title: "The scalp on the day",
+        detail: "0:29",
+        caption:
+          "A doctor at the clinic stands with a patient and shows the scalp after grafts have been placed.",
+        src: "/hair-transplant/videos/scalp.mp4",
+        poster: "/hair-transplant/videos/posters/scalp.jpg",
+      },
+      {
+        title: "The hairline and the grafts",
+        detail: "0:41",
+        caption:
+          "Dr. Adham Mansour, the hairline drawn on the scalp, and follicular grafts held for placement.",
+        src: "/hair-transplant/videos/hairline.mp4",
+        poster: "/hair-transplant/videos/posters/hairline.jpg",
+      },
+    ],
+  },
+  results: {
+    id: "results",
+    eyebrow: "Before and after",
+    title: "Before and after hair transplant.",
+    intro:
+      "Four patients, photographed before the procedure and once the grafts had grown. Examples from those scalps, not a result you can expect.",
+    note: "Individual results. Growth and density differ from person to person and depend on the donor area, the pattern of hair loss, and aftercare. Your likely result is discussed after the doctor examines your scalp.",
+    items: [
+      {
+        src: "/hair-transplant/bna/crown.webp",
+        alt: "Top-down view of a man's scalp before a hair transplant, bald across the crown, and after, covered with dark hair",
+        caption: "Crown and top of the scalp, seen from above.",
+        width: 911,
+        height: 640,
+      },
+      {
+        src: "/hair-transplant/bna/diffuse-thinning.webp",
+        alt: "A man's head tilted forward before a hair transplant, with thin, see-through hair across the top and crown, and after, with thick dark hair",
+        caption: "Diffuse thinning across the top and crown.",
+        width: 910,
+        height: 640,
+      },
+      {
+        src: "/hair-transplant/bna/mid-scalp.webp",
+        alt: "Top-down view of a man's scalp before a hair transplant, with thinning through the mid-scalp and crown, and after, with full hair and a defined hairline",
+        caption: "Thinning through the mid-scalp and crown.",
+        width: 910,
+        height: 640,
+      },
+      {
+        src: "/hair-transplant/bna/front-sparse.webp",
+        alt: "A man's head tilted forward before a hair transplant, with sparse hair through the front and top, and after, with denser hair",
+        caption: "Sparse hair through the front and top.",
+        width: 911,
+        height: 640,
+      },
+    ],
+  },
   recovery: {
     id: "recovery",
     eyebrow: "Hair transplant recovery",
@@ -351,6 +425,37 @@ export const hairTransplant: TreatmentPageContent = {
       body: "Your cost, graft estimate, and suitability are answered after the doctor examines your scalp. Call or WhatsApp us, or request an appointment online.",
       primary: { label: "Book Hair Transplant Consultation", href: "#appointment" },
     },
+  },
+  reviews: {
+    id: "reviews",
+    eyebrow: "Patient reviews",
+    title: "What people have written about the clinic.",
+    intro:
+      "Selected Google reviews of visits to the clinic. Each one describes that appointment. None of these is a hair transplant result, and a review is not a promise of growth.",
+    score: 4.5,
+    count: "1,251 reviews",
+    url: "https://share.google/XBFbN0Ild9eUH6te4",
+    source: "Google",
+    items: [
+      {
+        name: "Kirsten",
+        detail: "Consultation · October 2023",
+        quote:
+          "Dr. Hosin Shtat provided great service and comprehensive consultation to make recommendations best suited for me (skin and hair). Honest and personable which really put me at ease.",
+      },
+      {
+        name: "Imane",
+        detail: "Clinic visit · January 2022",
+        quote:
+          "The staff are very warm and welcoming. The services provided are affordable and equipments used are of good quality. I will definitely recommend Style Age Clinic.",
+      },
+      {
+        name: "Leyli",
+        detail: "Returning patient · December 2021",
+        quote:
+          "I have been going to Style Age for around 2 years now, for hydro facial, prp, laser and so on. I personally am very happy with the servise, hence keep going to the same place. Also, front desk ladies and very welcoming and sweet.",
+      },
+    ],
   },
   book: {
     id: "book",

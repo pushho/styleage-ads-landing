@@ -12,9 +12,12 @@ import { MobileBar } from "./mobile-bar";
 import { ProcessSection } from "./process-section";
 import { ReasonsSection } from "./reasons-section";
 import { RecoverySection } from "./recovery-section";
+import { ResultsSection } from "./results-section";
+import { ReviewsSection } from "./reviews-section";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { SuitabilitySection } from "./suitability-section";
+import { VideosSection } from "./videos-section";
 
 export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
   const actions = {
@@ -37,18 +40,21 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
           submitLabel={content.cta.book}
         />
         {content.why ? <ReasonsSection why={content.why} /> : null}
+        {content.videos ? <VideosSection videos={content.videos} /> : null}
         {content.process ? <ProcessSection process={content.process} /> : null}
-        {content.methods ? <MethodsSection methods={content.methods} /> : null}
+        {content.results ? <ResultsSection results={content.results} /> : null}
+        {/* {content.methods ? <MethodsSection methods={content.methods} /> : null}
         {content.suitability ? (
           <SuitabilitySection suitability={content.suitability} />
-        ) : null}
+        ) : null} */}
         {content.day ? <DaySection day={content.day} /> : null}
         {content.recovery ? <RecoverySection recovery={content.recovery} /> : null}
-        {content.limits ? <LimitsSection limits={content.limits} /> : null}
+        {content.reviews ? <ReviewsSection reviews={content.reviews} /> : null}
+        {/* {content.limits ? <LimitsSection limits={content.limits} /> : null} */}
+        {content.showTeam === false ? null : <Team />}
         {content.questions ? (
           <FaqSection questions={content.questions} actions={actions} />
         ) : null}
-        {content.showTeam === false ? null : <Team />}
         <BookSection
           book={content.book}
           form={content.form}

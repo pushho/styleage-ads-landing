@@ -104,6 +104,20 @@ export type TreatmentPageContent = {
       primary: { label: string; href: string };
     };
   };
+  reviews?: SectionCopy & {
+    url: string;
+    score: number;
+    count: string;
+    source: string;
+    items: { name: string; detail: string; quote: string }[];
+  };
+  videos?: SectionCopy & {
+    items: { title: string; caption: string; detail: string; src: string; poster: string }[];
+  };
+  results?: SectionCopy & {
+    note: string;
+    items: { src: string; alt: string; caption: string; width: number; height: number }[];
+  };
   book: {
     id: string;
     eyebrow: string;

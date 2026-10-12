@@ -15,6 +15,7 @@ export const facial: TreatmentPageContent = {
     { href: "#day", label: "The session" },
     { href: "#recovery", label: "Aftercare" },
     { href: "#questions", label: "Questions" },
+    { href: "#reviews", label: "Reviews" },
     { href: "#team", label: "Clinic" },
   ],
   cta: {
@@ -267,6 +268,37 @@ export const facial: TreatmentPageContent = {
       body: "What the visit will include, and what it will not, is answered after the skin is examined. Call or WhatsApp us, or request an appointment online.",
       primary: { label: "Book a Facial Consultation", href: "#appointment" },
     },
+  },
+  reviews: {
+    id: "reviews",
+    eyebrow: "Patient reviews",
+    title: "What people have written about a facial.",
+    intro:
+      "Selected Google reviews of facial visits at the clinic. A review describes that person’s skin on that day. It is not a result you can book.",
+    score: 4.5,
+    count: "1,251 reviews",
+    source: "Google",
+    url: "https://share.google/XBFbN0Ild9eUH6te4",
+    items: [
+      {
+        name: "Rashi",
+        detail: "Hydra facial · May 2023",
+        quote:
+          "Our facial aesthetician, Maricel is a very pleasant and kind lady who is also a thorough professional at her work. My Mom & myself had a wonderful experience with her. The facial was so relaxing and I feel a difference in my skin immediately after. I am surely coming back for their hydra facial.",
+      },
+      {
+        name: "Reka Franulovic",
+        detail: "Hydration facial · February 2021",
+        quote:
+          "Amazing clinic with well trained and professional staff. The nurses well experienced and pay attention to detail. friendly team with lovely ladies. Been going months and definitely will continue. My skin feels fresh and light after the hydration facial treatment.",
+      },
+      {
+        name: "Nancy",
+        detail: "Hydra facial · January 2022",
+        quote:
+          "First time to experience an Hydra Facial — well benefited service. Excellent service from front office to the therapist Ms. Nibal. Proven results at Style Age Clinic.",
+      },
+    ],
   },
   book: {
     id: "book",

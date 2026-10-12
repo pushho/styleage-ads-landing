@@ -15,6 +15,7 @@ export const laserHairRemoval: TreatmentPageContent = {
     { href: "#day", label: "The session" },
     { href: "#recovery", label: "Aftercare" },
     { href: "#questions", label: "Questions" },
+    { href: "#reviews", label: "Reviews" },
     { href: "#team", label: "Clinic" },
   ],
   cta: {
@@ -271,6 +272,37 @@ export const laserHairRemoval: TreatmentPageContent = {
         href: "#appointment",
       },
     },
+  },
+  reviews: {
+    id: "reviews",
+    eyebrow: "Patient reviews",
+    title: "What people have written about laser hair removal.",
+    intro:
+      "Selected Google reviews of laser visits at the clinic. Hair reduction differs from person to person. A review is not a session plan, and it is not a promise that hair will stop growing.",
+    score: 4.5,
+    count: "1,251 reviews",
+    source: "Google",
+    url: "https://share.google/XBFbN0Ild9eUH6te4",
+    items: [
+      {
+        name: "Nila Muhammed",
+        detail: "Laser hair removal",
+        quote:
+          "I recommend this clinic for their laser hair removal service. The therapist I got was well experienced and considerate and their packages work for different requirements. The clinic is well organized but location is a little difficult to understand but they help you reach properly. There is paid parking in the basement for clients. Overall, a good clinic in the Oud Metha area for skincare.",
+      },
+      {
+        name: "Lina Chalak",
+        detail: "Laser hair removal · February 2021",
+        quote:
+          "I’ve been doing laser hair removal at Style Age clinic since October and I am extremely happy with the results. I started seeing results from the 3rd session. I’m on my 5th session and hair is almost completely gone. Highly recommend!",
+      },
+      {
+        name: "Regine",
+        detail: "Underarm laser · January 2022",
+        quote:
+          "I came today for my underarm laser and i got excellent experience from the clinic and i was taken care by Ms. Vera who handled my concern very well. Thank you so much Ms. Vera for the excellent work surely recommend you and the clinic with my friends.",
+      },
+    ],
   },
   book: {
     id: "book",
