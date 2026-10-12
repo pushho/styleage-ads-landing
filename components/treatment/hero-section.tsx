@@ -68,6 +68,7 @@ export function HeroSection({
             variant="aside"
             concerns={form.concerns}
             submitLabel={submitLabel}
+            successNote={form.successNote}
             footnote={form.footnote}
             source={form.source}
           />
