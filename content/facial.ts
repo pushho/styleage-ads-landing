@@ -10,8 +10,8 @@ export const facial: TreatmentPageContent = {
   brandEyebrow: "Facial · Dubai",
   nav: [
     { href: "#why", label: "The treatment" },
+    { href: "#videos", label: "Videos" },
     { href: "#process", label: "The visit" },
-    { href: "#who", label: "Who it suits" },
     { href: "#day", label: "The session" },
     { href: "#recovery", label: "Aftercare" },
     { href: "#questions", label: "Questions" },
@@ -73,6 +73,39 @@ export const facial: TreatmentPageContent = {
         title: "Fee before booking",
         body: "What the visit will include, and your facial cost in Dubai, are explained at consultation. You can leave and decide later.",
         icon: "discreet",
+      },
+    ],
+  },
+  videos: {
+    id: "videos",
+    eyebrow: "On video",
+    title: "A short look at a facial.",
+    intro:
+      "Three clips filmed at the clinic. They show cleansing, masks, and a finishing step on different visits. Each plan was set for that skin on that day. They are examples, not the sequence every facial follows.",
+    items: [
+      {
+        title: "Steps in one visit",
+        detail: "0:52",
+        caption:
+          "Serums laid out, the skin cleansed, handheld devices and light used, and a sheet mask finished with a roller.",
+        src: "/facial/videos/routine.mp4",
+        poster: "/facial/videos/posters/routine.jpg",
+      },
+      {
+        title: "Foam and a gold mask",
+        detail: "0:16",
+        caption:
+          "A foaming cleanser brushed over the face, then a gold sheet mask and a light at the end.",
+        src: "/facial/videos/gold-mask.mp4",
+        poster: "/facial/videos/posters/gold-mask.jpg",
+      },
+      {
+        title: "Cleanse and a cream mask",
+        detail: "0:22",
+        caption:
+          "The skin cleansed with a sponge, then a white mask applied and left to settle.",
+        src: "/facial/videos/cream-mask.mp4",
+        poster: "/facial/videos/posters/cream-mask.jpg",
       },
     ],
   },

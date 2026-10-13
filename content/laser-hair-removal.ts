@@ -11,14 +11,9 @@ export const laserHairRemoval: TreatmentPageContent = {
   nav: [
     { href: "#why", label: "The treatment" },
     { href: "#videos", label: "Videos" },
-    { href: "#process", label: "The course" },
     { href: "#results", label: "Results" },
-    { href: "#areas", label: "Areas" },
-    { href: "#day", label: "The session" },
-    { href: "#recovery", label: "Aftercare" },
-    { href: "#questions", label: "Questions" },
     { href: "#reviews", label: "Reviews" },
-    { href: "#team", label: "Clinic" },
+    { href: "#questions", label: "Questions" },
   ],
   cta: {
     book: "Book a Laser Hair Removal Consultation",
