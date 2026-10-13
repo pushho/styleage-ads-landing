@@ -278,7 +278,7 @@ export const facial: TreatmentPageContent = {
     score: 4.5,
     count: "1,251 reviews",
     source: "Google",
-    url: "https://share.google/XBFbN0Ild9eUH6te4",
+    url: "https://www.google.com/search?q=StyleAge+Clinic&oq=styleage+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7Mg0IARAuGK8BGMcBGIAEMgYIAhBFGDsyCwgDEAAYChgLGIAEMgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgyMjcyajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x3e5f5d380dde7da3:0xcb47c40e1b157c53,1,,,,",
     items: [
       {
         name: "Rashi",

@@ -69,8 +69,8 @@ export function ReviewsSection({
           ))}
         </ul>
         <div className="mt-4 flex justify-center">
-          <a href={reviews.url} className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark">
-            View all reviews
+          <a href={reviews.url} className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark underline">
+            View all google reviews
             <ArrowRight className="size-3.5" />                       
           </a>
         </div>
