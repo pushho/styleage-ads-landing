@@ -54,7 +54,7 @@ export function ReasonsSection({
         ))}
       </ul>
 
-      <figure className="relative order-2 mt-4 aspect-square overflow-hidden sm:aspect-video lg:order-none mr-20 lg:mt-0 lg:aspect-auto">
+      <figure className="relative order-2 mt-4 aspect-square overflow-hidden sm:aspect-video lg:order-none mr-20 md:mr-0 lg:mt-0 lg:aspect-auto">
         <img
           src={why.image.src}
           alt={why.image.alt}

@@ -10,7 +10,9 @@ export const laserHairRemoval: TreatmentPageContent = {
   brandEyebrow: "Laser hair removal · Dubai",
   nav: [
     { href: "#why", label: "The treatment" },
+    { href: "#videos", label: "Videos" },
     { href: "#process", label: "The course" },
+    { href: "#results", label: "Results" },
     { href: "#areas", label: "Areas" },
     { href: "#day", label: "The session" },
     { href: "#recovery", label: "Aftercare" },
@@ -73,6 +75,39 @@ export const laserHairRemoval: TreatmentPageContent = {
       },
     ],
   },
+  videos: {
+    id: "videos",
+    eyebrow: "On video",
+    title: "A short look at a session.",
+    intro:
+      "Three clips filmed at the clinic. One is a therapist introducing the laser. The others show the legs and an arm being treated. They are examples from those visits, not a result you can expect.",
+    items: [
+      {
+        title: "The laser and the therapist",
+        detail: "0:38",
+        caption:
+          "A therapist at the clinic introduces the laser, its handpiece, and the eye protection worn during a session.",
+        src: "/laser-hair/videos/therapist.mp4",
+        poster: "/laser-hair/videos/posters/therapist.jpg",
+      },
+      {
+        title: "Razors and wax, then laser",
+        detail: "0:53",
+        caption:
+          "Razors and wax strips set aside, the area marked on the leg, and the handpiece moved over each section.",
+        src: "/laser-hair/videos/legs.mp4",
+        poster: "/laser-hair/videos/posters/legs.jpg",
+      },
+      {
+        title: "An arm session",
+        detail: "0:12",
+        caption:
+          "Gel applied to the forearm before the handpiece is passed over the skin.",
+        src: "/laser-hair/videos/arm.mp4",
+        poster: "/laser-hair/videos/posters/arm.jpg",
+      },
+    ],
+  },
   process: {
     id: "process",
     eyebrow: "Laser hair removal consultation in Dubai",
@@ -99,6 +134,44 @@ export const laserHairRemoval: TreatmentPageContent = {
       {
         title: "The next visit",
         body: "Treated hairs often shed over the following days and weeks. The next session is booked for when a new set of follicles is growing. After a course, some people need only occasional maintenance. That is discussed from what your skin actually does, not from a fixed calendar.",
+      },
+    ],
+  },
+  results: {
+    id: "results",
+    eyebrow: "Before and after",
+    title: "Before and after laser hair removal.",
+    intro:
+      "Four areas, photographed before a course and after the sessions were complete. Examples from those patients, not a result you can expect.",
+    note: "Individual results. How much hair is reduced differs from person to person and depends on the colour and thickness of the hair, the skin, the area, and the number of sessions. Your likely result is discussed after the area is examined.",
+    items: [
+      {
+        src: "/laser-hair/bna/underarm.webp",
+        alt: "An underarm before laser hair removal, with thick dark hair, and after, with smooth skin and only faint stubble",
+        caption: "Underarm, before and after a course.",
+        width: 960,
+        height: 640,
+      },
+      {
+        src: "/laser-hair/bna/leg.webp",
+        alt: "A lower leg before laser hair removal, covered in dark hair, and after, with smooth skin",
+        caption: "Lower leg, before and after a course.",
+        width: 960,
+        height: 640,
+      },
+      {
+        src: "/laser-hair/bna/arm.webp",
+        alt: "A forearm before laser hair removal, with dark hair along its length, and after, with smooth skin",
+        caption: "Forearm, before and after a course.",
+        width: 960,
+        height: 640,
+      },
+      {
+        src: "/laser-hair/bna/abdomen.webp",
+        alt: "An abdomen before laser hair removal, with dark hair around and below the navel, and after, with smooth skin",
+        caption: "Abdomen, before and after a course.",
+        width: 960,
+        height: 640,
       },
     ],
   },
