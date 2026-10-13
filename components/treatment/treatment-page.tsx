@@ -14,6 +14,7 @@ import { ReasonsSection } from "./reasons-section";
 import { RecoverySection } from "./recovery-section";
 import { ResultsSection } from "./results-section";
 import { ReviewsSection } from "./reviews-section";
+import { ServicesSection } from "./services-section";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { SuitabilitySection } from "./suitability-section";
@@ -40,6 +41,7 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
           submitLabel={content.cta.book}
         />
         {content.why ? <ReasonsSection why={content.why} /> : null}
+        {content.services ? <ServicesSection services={content.services} /> : null}
         {content.videos ? <VideosSection videos={content.videos} /> : null}
         {content.process ? <ProcessSection process={content.process} /> : null}
         {content.results ? <ResultsSection results={content.results} /> : null}

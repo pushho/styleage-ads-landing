@@ -10,6 +10,7 @@ export const facial: TreatmentPageContent = {
   brandEyebrow: "Facial · Dubai",
   nav: [
     { href: "#why", label: "The treatment" },
+    { href: "#services", label: "Services" },
     { href: "#videos", label: "Videos" },
     { href: "#process", label: "The visit" },
     { href: "#day", label: "The session" },
@@ -73,6 +74,31 @@ export const facial: TreatmentPageContent = {
         title: "Fee before booking",
         body: "What the visit will include, and your facial cost in Dubai, are explained at consultation. You can leave and decide later.",
         icon: "discreet",
+      },
+    ],
+  },
+  services: {
+    id: "services",
+    eyebrow: "Our services",
+    title: "Facial treatments at the clinic.",
+    intro:
+      "Alongside a medical facial, the clinic offers treatments that work below the surface. Which one suits your skin, if any, is decided at consultation.",
+    items: [
+      {
+        title: "Deep HydraFacial",
+        body: "Cleanses, exfoliates, and gently clears congested pores with suction, then infuses hydrating serums. For dull, dry, or congested skin, with no downtime.",
+      },
+      {
+        title: "RF Microneedling",
+        body: "Fine needles deliver radiofrequency energy beneath the surface to encourage collagen. Used for texture, open pores, mild laxity, and some acne scars.",
+      },
+      {
+        title: "Dermapen",
+        body: "Controlled microneedling with an automated pen. Tiny channels prompt the skin to repair, softening fine lines, uneven texture, and marks over a course.",
+      },
+      {
+        title: "Acne Treatment by Microneedling",
+        body: "Microneedling aimed at the scars and rough texture left by past breakouts. Active, inflamed acne is calmed first, as needling is not done over it.",
       },
     ],
   },
