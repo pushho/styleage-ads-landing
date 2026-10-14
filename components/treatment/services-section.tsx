@@ -29,13 +29,22 @@ export function ServicesSection({
           {services.items.map((item) => (
             <li
               key={item.title}
-              className="flex flex-col rounded-md border border-border bg-surface p-6 shadow-soft"
+              className="flex flex-col overflow-hidden rounded-md border border-border bg-surface shadow-soft"
             >
-              <span aria-hidden="true" className="h-0.5 w-8 bg-accent" />
-              <h3 className="mt-5 font-heading text-lg font-medium tracking-tight">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              <figure className="relative aspect-6/3 overflow-hidden bg-accent-wash">
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  loading="lazy"
+                  className={`absolute inset-0 h-full w-full object-cover ${item.image.className ?? ""}`}
+                />
+              </figure>
+              <div className="p-6">
+                <h3 className="font-heading text-lg font-medium tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              </div>
             </li>
           ))}
         </ul>

@@ -87,18 +87,34 @@ export const facial: TreatmentPageContent = {
       {
         title: "Deep HydraFacial",
         body: "Cleanses, exfoliates, and gently clears congested pores with suction, then infuses hydrating serums. For dull, dry, or congested skin, with no downtime.",
+        image: {
+          src: "/images/facial-service-hydrafacial.webp",
+          alt: "An aesthetician passing a hydrafacial wand over a woman's cheek, beside the treatment tower and its serum bottles",
+        },
       },
       {
         title: "RF Microneedling",
         body: "Fine needles deliver radiofrequency energy beneath the surface to encourage collagen. Used for texture, open pores, mild laxity, and some acne scars.",
+        image: {
+          src: "/images/facial-service-rf-microneedling.webp",
+          alt: "An RF microneedling tip pressed against a man's jawline, with a mild flush on the treated cheek",
+        },
       },
       {
         title: "Dermapen",
         body: "Controlled microneedling with an automated pen. Tiny channels prompt the skin to repair, softening fine lines, uneven texture, and marks over a course.",
+        image: {
+          src: "/images/facial-service-dermapen.webp",
+          alt: "A Dermapen used on a woman's forehead over a layer of glide serum, the skin held taut",
+        },
       },
       {
         title: "Acne Treatment by Microneedling",
         body: "Microneedling aimed at the scars and rough texture left by past breakouts. Active, inflamed acne is calmed first, as needling is not done over it.",
+        image: {
+          src: "/images/facial-service-acne.webp",
+          alt: "A doctor examining acne scars on a woman's cheek under a magnifying lamp before microneedling",
+        },
       },
     ],
   },
@@ -380,13 +396,10 @@ export const facial: TreatmentPageContent = {
   },
   form: {
     concerns: [
-      { value: "dull", label: "Dull or tired skin" },
-      { value: "congestion", label: "Congestion or breakouts" },
-      { value: "dryness", label: "Dryness or sensitivity" },
-      { value: "tone", label: "Uneven tone" },
-      { value: "event", label: "A facial before an event" },
-      { value: "plan", label: "Where a facial fits in my skin plan" },
-      { value: "opinion", label: "I want an opinion first" },
+      { value: "hydrafacial", label: "Deep HydraFacial" },
+      { value: "rf-microneedling", label: "RF Microneedling" },
+      { value: "dermapen", label: "Dermapen" },
+      { value: "acne-treatment", label: "Acne Treatment by Microneedling" },
     ],
     successNote:
       "Keep {phone} nearby. A clear photograph of your face in daylight, without makeup, will give the conversation a head start.",

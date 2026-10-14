@@ -68,7 +68,7 @@ export type TreatmentPageContent = {
     reasons: { title: string; body: string; icon: ReasonIcon }[];
   };
   services?: SectionCopy & {
-    items: { title: string; body: string }[];
+    items: { title: string; body: string; image: TreatmentImage }[];
   };
   process?: SectionCopy & {
     steps: { title: string; body: string }[];
