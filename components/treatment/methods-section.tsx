@@ -10,7 +10,7 @@ export function MethodsSection({
   return (
     <section
       id={methods.id}
-      className="scroll-mt-32 border-t border-border bg-white lg:scroll-mt-24"
+      className="scroll-mt-32 border-t border-border bg-white xl:scroll-mt-24"
     >
       <div className="lg:grid lg:grid-cols-2">
         <figure className="relative aspect-4/3 overflow-hidden bg-accent-wash sm:aspect-video lg:aspect-auto lg:min-h-136">

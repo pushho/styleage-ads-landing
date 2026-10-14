@@ -1,6 +1,7 @@
 import { CLINIC, CLINIC_LINKS } from "@/lib/clinic";
 import type { NavLink } from "@/lib/treatment";
 import { BrandMark, ContactIcon } from "./icons";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function SiteHeader({
   brandEyebrow,
@@ -13,11 +14,14 @@ export function SiteHeader({
 }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-surface/90 backdrop-blur-md">
-      <div className="mx-auto flex w-full items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex w-full items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10 xl:gap-4 2xl:gap-6">
         <a href="#top" className="flex items-center gap-3">
           <BrandMark />
           <span>
-            <span className="block font-heading text-xl leading-none tracking-tight">
+            <span
+              translate="no"
+              className="notranslate block font-heading text-xl leading-none tracking-tight"
+            >
               {CLINIC.name}
             </span>
             <span className="mt-1 hidden text-[0.62rem] tracking-[0.18em] text-muted uppercase sm:block">
@@ -25,14 +29,15 @@ export function SiteHeader({
             </span>
           </span>
         </a>
-        <nav className="hidden items-center gap-7 text-sm text-text/80 lg:flex">
+        <nav className="hidden items-center gap-4 text-sm text-text/80 xl:flex 2xl:gap-7">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-text">
+            <a key={item.href} href={item.href} className="whitespace-nowrap hover:text-text">
               {item.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 xl:gap-4 2xl:gap-5">
+          <LanguageSwitcher />
           <a
             href={CLINIC_LINKS.phone}
             className="hidden items-center gap-2 text-sm text-text/80 hover:text-accent-dark xl:inline-flex"
@@ -49,13 +54,13 @@ export function SiteHeader({
           </a>
           <a
             href="#consult"
-            className="hidden bg-accent-dark px-4 py-2.5 text-sm text-white transition-opacity hover:opacity-90 md:inline-flex"
+            className="hidden bg-accent-dark px-4 py-2.5 text-sm whitespace-nowrap text-white transition-opacity hover:opacity-90 md:inline-flex"
           >
             {appointmentLabel}
           </a>
         </div>
       </div>
-      <nav aria-label="Sections" className="border-t border-border/80 lg:hidden">
+      <nav aria-label="Sections" className="border-t border-border/80 xl:hidden">
         <ul className="flex gap-1 overflow-x-auto px-3 py-1.5 [scrollbar-width:none] sm:px-6 [&::-webkit-scrollbar]:hidden">
           {nav.map((item) => (
             <li key={item.href} className="shrink-0">

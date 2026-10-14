@@ -22,7 +22,7 @@ export function FaqSection({
   return (
     <section
       id={questions.id}
-      className="scroll-mt-32 border-t border-border lg:scroll-mt-24"
+      className="scroll-mt-32 border-t border-border xl:scroll-mt-24"
     >
       <script
         type="application/ld+json"

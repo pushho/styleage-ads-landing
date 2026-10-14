@@ -9,7 +9,7 @@ export function ServicesSection({
   return (
     <section
       id={services.id}
-      className="scroll-mt-32 border-t border-border bg-white lg:scroll-mt-24"
+      className="scroll-mt-32 border-t border-border bg-white xl:scroll-mt-24"
     >
       <div className="mx-auto w-full px-5 py-16 sm:px-8 md:py-20 lg:px-10">
         <Eyebrow>{services.eyebrow}</Eyebrow>

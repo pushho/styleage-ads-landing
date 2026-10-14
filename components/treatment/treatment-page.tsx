@@ -52,7 +52,7 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
         ) : null} */}
         {content.day ? <DaySection day={content.day} /> : null}
         {content.recovery ? <RecoverySection recovery={content.recovery} /> : null}
-        {/* {content.reviews ? <ReviewsSection reviews={content.reviews} /> : null} */}
+        {content.reviews ? <ReviewsSection reviews={content.reviews} /> : null}
         {/* {content.limits ? <LimitsSection limits={content.limits} /> : null} */}
         {content.showTeam === false ? null : <Team />}
         {content.questions ? (
