@@ -350,8 +350,8 @@ export const facial: TreatmentPageContent = {
     title: "What people have written about a facial.",
     intro:
       "Selected Google reviews of facial visits at the clinic. A review describes that person’s skin on that day. It is not a result you can book.",
-    score: 4.5,
-    count: "1,251 reviews",
+    score: 4.6,
+    count: "1,310 reviews",
     source: "Google",
     url: "https://www.google.com/search?q=StyleAge+Clinic&oq=styleage+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7Mg0IARAuGK8BGMcBGIAEMgYIAhBFGDsyCwgDEAAYChgLGIAEMgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgyMjcyajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x3e5f5d380dde7da3:0xcb47c40e1b157c53,1,,,,",
     items: [

@@ -13,6 +13,7 @@ import { ProcessSection } from "./process-section";
 import { ReasonsSection } from "./reasons-section";
 import { RecoverySection } from "./recovery-section";
 import { ResultsSection } from "./results-section";
+import { ReviewsBadge } from "./reviews-badge";
 import { ReviewsSection } from "./reviews-section";
 import { ServicesSection } from "./services-section";
 import { SiteFooter } from "./site-footer";
@@ -51,7 +52,7 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
         ) : null} */}
         {content.day ? <DaySection day={content.day} /> : null}
         {content.recovery ? <RecoverySection recovery={content.recovery} /> : null}
-        {content.reviews ? <ReviewsSection reviews={content.reviews} /> : null}
+        {/* {content.reviews ? <ReviewsSection reviews={content.reviews} /> : null} */}
         {/* {content.limits ? <LimitsSection limits={content.limits} /> : null} */}
         {content.showTeam === false ? null : <Team />}
         {content.questions ? (
@@ -67,6 +68,7 @@ export function TreatmentPage({ content }: { content: TreatmentPageContent }) {
       <SiteFooter nav={content.nav} footer={content.footer} actions={actions} />
       <MobileBar actions={actions} appointmentLabel={content.cta.appointment} />
       <FloatingContact actions={actions} />
+      {content.reviews ? <ReviewsBadge reviews={content.reviews} /> : null}
     </div>
   );
 }
