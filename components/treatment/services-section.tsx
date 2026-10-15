@@ -25,11 +25,11 @@ export function ServicesSection({
             {services.intro}
           </p>
         </div>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 flex flex-wrap justify-center gap-4">
           {services.items.map((item) => (
             <li
               key={item.title}
-              className="flex flex-col overflow-hidden rounded-md border border-border bg-surface shadow-soft"
+              className="flex w-full flex-col overflow-hidden rounded-md border border-border bg-surface shadow-soft sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
             >
               <figure className="relative aspect-6/3 overflow-hidden bg-accent-wash">
                 <img

@@ -396,8 +396,10 @@ export const laserHairRemoval: TreatmentPageContent = {
   },
   form: {
     concerns: [
-      { value: "underarms", label: "Underarms" },
-      { value: "arms-legs", label: "Arms or legs" },
+      { value: "arms", label: "Arms" },
+      { value: "legs", label: "Legs" },
+      { value: "full-body", label: "full body(with chest and back)" },
+      { value: "full-body-without-chest-and-back", label: "full body(without chest and back)" },
       { value: "bikini", label: "Bikini area" },
       { value: "face", label: "Face (lip, chin, or jaw)" },
       { value: "body", label: "Back, chest, or another area" },

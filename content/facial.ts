@@ -116,6 +116,14 @@ export const facial: TreatmentPageContent = {
           alt: "A doctor examining acne scars on a woman's cheek under a magnifying lamp before microneedling",
         },
       },
+      {
+        title: "Skin Pigmentation",
+        body: "For sun spots, melasma, and dark marks left after acne. The type and depth of pigment are assessed first, then gentle peels, topicals, or laser are combined over a course.",
+        image: {
+          src: "/images/facial-service-pigmentation.webp",
+          alt: "A gloved hand holding a slim laser handpiece over brown patches on a reclining woman's cheek, a pad shielding her closed eye",
+        },
+      },
     ],
   },
   videos: {
@@ -400,6 +408,7 @@ export const facial: TreatmentPageContent = {
       { value: "rf-microneedling", label: "RF Microneedling" },
       { value: "dermapen", label: "Dermapen" },
       { value: "acne-treatment", label: "Acne Treatment by Microneedling" },
+      { value: "pigmentation", label: "Skin Pigmentation" },
     ],
     successNote:
       "Keep {phone} nearby. A clear photograph of your face in daylight, without makeup, will give the conversation a head start.",
